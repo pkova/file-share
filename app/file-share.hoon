@@ -217,7 +217,7 @@
   =/  poke-card  ?.  =(u.ship our)
     ?:  =(body.request.q.req ~)
       !!
-    [%pass /send-url/[filename]/[(scot %da now)]/[eny] %agent [u.ship %file-share] %poke %file-share-initiate !>([filename now eny p.-.+.result])]~
+    [%pass /send-url/[filename]/[(scot %da now)]/[eny] %agent [u.ship %file-share] %poke %file-share-initiate !>([filename now eny p.-.+.result q.-.+.result])]~
   ~
   (weld `(list card)`cards `(list card)`poke-card)
 ::
@@ -1054,7 +1054,7 @@
       %file-share-initiate
     =/  file-info  !<  file-info  vase
     ?:  (gth (sub capacity.storage.state used.storage.state) size.file-info)
-      [(request-file file-info our.bowl now.bowl src.bowl) this]
+      `this(received.state (~(put by received.state) filename.file-info [[size.file-info data.file-info] 'txt' src.bowl now.bowl]), used.storage.state (add used.storage.state size.file-info))
     :_  this
     :~
       [%pass /failed %agent [src.bowl %file-share] %poke %file-share-failed !>([filename.file-info timestamp.file-info eny.file-info %storage])]
